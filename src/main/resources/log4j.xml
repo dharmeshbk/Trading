@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+    <appender name="DEBUGFILE" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/trade_debug.log"/>
+        <param name="Append" value="true"/>
+        <param name="MaxFileSize" value="50MB"/>
+        <param name="MaxBackupIndex" value="20"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%c] %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="DEBUG"/>
+            <param name="LevelMax" value="ERROR"/>            
+        </filter>
+    </appender>
+     <appender name="INFOFILE" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/trade_info.log"/>
+        <param name="Append" value="true"/>
+        <param name="MaxFileSize" value="50MB"/>
+        <param name="MaxBackupIndex" value="20"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%c] %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO"/>
+            <param name="LevelMax" value="ERROR"/>
+        </filter>
+    </appender>
+    <appender name="ERRORFILE" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/trade_error.log"/>
+        <param name="Append" value="true"/>
+        <param name="MaxFileSize" value="50MB"/>
+        <param name="MaxBackupIndex" value="20"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%c] %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="WARN"/>
+            <param name="LevelMax" value="FATAL"/>
+        </filter>
+    </appender>
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+    	<param name="Target" value="System.out" />
+        <layout class="org.apache.log4j.PatternLayout">            
+            <param name="ConversionPattern" value="%d{ABSOLUTE} %-5p [%c{1}] %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="INFO"/>
+            <param name="LevelMax" value="ERROR"/>
+        </filter>
+    </appender>
+    <logger name="com.sohang.trade" additivity="false">
+        <!-- 
+        <priority value="all"/>
+        -->
+        <level value="INFO"/>
+        <appender-ref ref="DEBUGFILE" />
+        <appender-ref ref="INFOFILE" />
+        <appender-ref ref="ERRORFILE" />        
+        <appender-ref ref="CONSOLE" />
+    </logger>  
+</log4j:configuration>
+

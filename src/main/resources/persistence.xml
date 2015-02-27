@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
+    <persistence-unit name="ohang_tradeIdea">
+        <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+         <class>com.sohang.trade.TradeIdea</class>
+        <properties>
+	        <property name="hibernate.ogm.datastore.provider" value="org.hibernate.ogm.datastore.mongodb.impl.MongoDBDatastoreProvider"/>
+	        <property name="hibernate.ogm.mongodb.database" value="mongo-ohangdb"/>
+	        <property name="hibernate.ogm.mongodb.host" value="localhost"/>
+	        <property name="hibernate.search.default.directory_provider" value="filesystem"/>
+	        <property name="hibernate.search.default.indexBase" value=".hibernate_ogm_demo_luceneindexes"/>
+	        <property name="hibernate.show_sql" value="false" />
+    	</properties>
+
+    </persistence-unit>
+</persistence>
