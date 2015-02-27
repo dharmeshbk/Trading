@@ -9,7 +9,7 @@
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${catalina.base}/logs/ohang-trading.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${catalina.base}/logs/ohang-trading-%d{yyyy-MM-dd_HH}.log</fileNamePattern>
+            <fileNamePattern>${catalina.base}/logs/ohang-trade-dea-%d{yyyy-MM-dd_HH}.log</fileNamePattern>
             <!-- Keep only 15 days worth of history (15 days x 24 hourly files/day = 360)... -->
             <maxHistory>360</maxHistory>
         </rollingPolicy>
