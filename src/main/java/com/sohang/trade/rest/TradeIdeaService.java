@@ -32,10 +32,10 @@ public class TradeIdeaService {
 	@Produces("application/json")
 	@Consumes("application/json")
 	public SpringTradeIdeaView createTradeIdea(SpringTradeIdea tradeidea) {
-			LOGGER.info("createTradeIdea {} ",tradeidea);
-			SpringTradeIdeaView view = null;//dataService.store(tradeidea);
-			LOGGER.info("tradeidea is stored for the ticket {} ", view.getTicker());			
-			return view;
+		LOGGER.info("createTradeIdea {} ",tradeidea);
+		SpringTradeIdeaView view = null;//dataService.store(tradeidea);
+		LOGGER.info("tradeidea is stored for the ticket {} ", view.getTicker());		
+		return view;
 	}
 	
 	@GET
