@@ -24,7 +24,7 @@ public class SpringTradeExcelReader {
 	String inputXMLMap = "C:\\Users\\dkumar\\projects\\sohang\\Trading\\src\\main\\resources\\tradeIdeaTemplate.xml";
 	String inputTradeExcel = "C:\\Users\\dkumar\\Desktop\\Misc\\TradePlanning.xlsx";
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(TradeExcelReader.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(SpringTradeExcelReader.class);
 	
 	public List<SpringTradeIdea> loadDataFromExcel() {
 		try {

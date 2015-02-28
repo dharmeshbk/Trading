@@ -42,8 +42,8 @@ app.controller('TradeIdeaListCtrl', ['$scope', 'TradeIdeasFactory', 'TradeIdeaFa
         };
 
         // callback for ng-click 'createTradeIdea':
-        $scope.createNewTradeIdea = function () {
-            $location.path('/tradeIdea-creation');
+        $scope.createNewTradeIdea = function () {  	
+        	$location.path('/tradeIdea-creation');
         };
 
         $scope.springTradeIdeaViews = TradeIdeasFactory.query();
@@ -68,11 +68,19 @@ app.controller('TradeIdeaDetailCtrl', ['$scope', '$routeParams', 'TradeIdeaFacto
 
   app.controller('TradeIdeaCreationCtrl', ['$scope', 'TradeIdeasFactory', '$location',
           function ($scope, TradeIdeasFactory, $location) {
-
-              // callback for ng-click 'createNewUser':
+	  			
+	  		  // callback for ng-click 'createNewUser':
               $scope.createNewTradeIdea = function () {
-            	  TradeIdeasFactory.create($scope.springTradeIdea);
-                  $location.path('/tradeIdear-list');
+            	  TradeIdeasFactory.create($scope.springTradeIdea);	
+                  $location.path('/tradeIdea-list');
               }
+             
+              $scope.springTradeIdea.chartTimeFrames = [{name:'Daily'},{name:'Daily & Weekly'},{name:'30 minutes'},{name:'5 minutes'} ];
+              $scope.springTradeIdea.chartTimeFrame = $scope.springTradeIdea.chartTimeFrames[0];
+            //$scope.timeFrames = [{name:'Daily'},{name:'Daily & Weekly'},{name:'30 minutes'},{name:'5 minutes'} ];
+  			$scope.sources = [{name:'Kirk Prospector'},{name:'My watch'},{name:'Bespoke'},{name:'Kirk watch'} ];
+  			$scope.patterns = [{name:'C&H'},{name:'H&S'},{name:'Channel'},{name:'Bull Flag'},{name:'Bear Flag'},{name:'Inv C&H'},{name:'Inv H&S'} ];
+              
+              
           }]);
 
