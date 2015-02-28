@@ -1,25 +1,98 @@
+
 <div class="container">
     <h1>Create a new TradeIdea</h1>
 
     <form class="form-horizontal">
-        <div class="control-group">
+       
             <label class="control-label" for="inputTicker">Ticker:</label>
 
             <div class="controls">
                 <input type="text" id="inputTicker" ng-model="springTradeIdea.ticker" required placeholder="eg.MSFT"/>
             </div>
-        </div>
-        <div class="control-group">
+            
+             <label class="control-label" for="inputWatchDate">Watch Date:</label>
+
+            <div class="controls">
+                <input type="date"  id="inputWatchDate" ng-model="springTradeIdea.watchDate" value="{{watchDate}}"/>
+                
+            </div>
+       
             <label class="control-label" for="inputTradePrice">Trade Price:</label>
 
             <div class="controls">
                 <input type="number" id="inputTradePrice" ng-model="springTradeIdea.tradePrice" required placeholder="10"/>
             </div>
-        </div>
+            
+            <label class="control-label" for="inputStopPrice">Stop Price:</label>
+
+            <div class="controls">
+                <input type="number" id="inputTradePrice" ng-model="springTradeIdea.stopPrice" required placeholder="10"/>
+            </div>
+      	
+      		<label class="control-label" for="inputAcutalQty">Quantity:</label>
+
+            <div class="controls">
+                <input type="number" id="inputAcutalQty" ng-model="springTradeIdea.actualQty" required placeholder="10"/>
+            </div>
+            
+            <label class="control-label" for="inputLowerBand">Lower Band:</label>
+
+            <div class="controls">
+                <input type="number" id="inputLowerBand" ng-model="springTradeIdea.lowerBand" required placeholder="10"/>
+            </div>
+      		
+      		  <label class="control-label" for="inputbaseBand">Base Band:</label>
+
+            <div class="controls">
+                <input type="number" id="inputbaseBand" ng-model="springTradeIdea.baseBand" required placeholder="10"/>
+            </div>
+            
+             <label class="control-label" for="inputCurrentPrice">Current Price:</label>
+
+            <div class="controls">
+                <input type="number" id="inputCurrentPrice" ng-model="springTradeIdea.currentPrice" required placeholder="10"/>
+            </div>
+            
+            <label class="control-label" for="inputCurrentPrice">Current Price:</label>
+
+            <div class="controls">
+                <input type="number" id="inputTargetPrice" ng-model="springTradeIdea.targetPrice" required placeholder="10"/>
+            </div>
+            
+             <label class="control-label" for="inputSector">Sector:</label>
+
+            <div class="controls">
+                <input type="text" id="inputSector" ng-model="springTradeIdea.sector" required placeholder="eg.Healthcare"/>
+            </div>
+		
+			<label class="control-label" for="inputChartTimeFrame">Chart TimeFrame:</label>
+
+            <div class="controls">
+                <select id="inputChartTimeFrame" ng-model="springTradeIdea.chartTimeFrame" ng-options="timeFrame.name for timeFrame in timeFrames"> </select>
+            </div>
+            
+            <label class="control-label" for="inputWatchlistSource">Source:</label>
+
+            <div class="controls">
+            	<select id="inputWatchlistSource" ng-model="springTradeIdea.watchlistSource" ng-options="source.name for source in sources"> </select>                
+            </div>
+            
+            <label class="control-label" for="inputTechnicalPattern">Technical Pattern:</label>
+
+            <div class="controls">
+            	<select id="inputTechnicalPattern" ng-model="springTradeIdea.technicalPattern" ng-options="pattern.name for pattern in patterns"> </select>                
+            </div>
+			
+			<label class="control-label" for="inputtradeSetupIdea">Trader Setup Idea:</label>
+            <div class="offset2">
+            	<textarea ng-model="springTradeIdea.tradeSetupIdea" rows="8" class="input-no-width rounded shaded left clearboth" id="inputTradeSetupIdea" required></textarea>
+			</div>
+      
         <div class="control-group">
             <div class="controls">
                 <a ng-click="createNewTradeIdea()" class="btn btn-small btn-primary">Save</a>
             </div>
         </div>
+        
     </form>
 </div>

@@ -34,14 +34,15 @@ public class TradeIdeaService {
 	public SpringTradeIdeaView createTradeIdea(SpringTradeIdea tradeidea) {
 		LOGGER.info("createTradeIdea {} ",tradeidea);
 		SpringTradeIdeaView view = null;//dataService.store(tradeidea);
-		LOGGER.info("tradeidea is stored for the ticket {} ", view.getTicker());		
+//		LOGGER.info("tradeidea is stored for the ticket {} ", view.getTicker());		
 		return view;
 	}
 	
 	@GET
+	@Path("/All")
 	@Produces("application/json")
 	public List<SpringTradeIdeaView> getTradeIdeas() {
-		LOGGER.info("GetTradesByProbability");
+		LOGGER.info("GetTrades");
 		 List<SpringTradeIdeaView> views = dataService.getTradeIdeasWithProbability(0);
 		 LOGGER.info("returned the views size {} ", views.size());
 		 LOGGER.info("returned the views size {} ", views);
